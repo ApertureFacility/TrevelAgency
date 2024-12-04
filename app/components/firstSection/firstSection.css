@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+  
+  .homepage {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .homepage__hero,
+  .homepage__tours,
+  .homepage__guides,
+  .homepage__promotions,
+  .homepage__contacts {
+    scroll-snap-align: start; 
+    height: 100vh; 
+    width: 100%; 
+    padding: 20px;
+    box-sizing: border-box; 
+    overflow: hidden; 
+  }
+  
+  .homepage__hero {
+    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./mount.jpg');
+    background-size: cover; 
+    background-position: center 25%;
+    color: #fff;
+    
+  }
+  
+  .homepage__hero-title {
+    width: 40%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+  }
+  
+  .homepage__hero-text {
+    font-size: 1.5rem;
+    color: #D4F1F9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 3rem 0;
+  }
+  
+  .homepage__hero_text {
+    margin-top: 8%;
+    margin-left: 9%;
+    text-align: left;
+  }
+  
+  .homepage__search {
+    display: flex; 
+    align-items: center; 
+    margin-top: 50px;
+    gap: 10px; 
+  }
+  
+  .homepage__search-input {
+    padding: 17px 20px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    width: 75%;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    color: #333;
+  }
+  
+  .homepage__search-input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    background-color: #fff;
+  }
+  
+  .homepage__search-button {
+    padding: 17px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #ff7f50;
+    color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .homepage__search-button:hover {
+    background-color: #e67348;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .homepage__search-button:active {
+    background-color: #cc6240;
+    transform: scale(0.98);
+  }
+  
+  .homepage__tours {
+    background: linear-gradient(180deg, rgba(240, 240, 240, 1), rgba(200, 200, 200, 1));
+    color: #333;
+  }
+  
+ 
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
