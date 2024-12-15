@@ -1,7 +1,7 @@
 /* Общие стили для TripsFilter */
 .trips-filter {
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  width: 80vw;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -19,13 +19,16 @@
 /* Стили формы фильтрации */
 .trips-filter__form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 15px;
+  align-items: flex-end;
 }
 
 .trips-filter__form-group {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 150px; /* Для равномерного распределения */
 }
 
 .trips-filter__label {
@@ -58,6 +61,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  align-self: flex-start; /* чтобы кнопка была на одном уровне с полями ввода */
 }
 
 .trips-filter__button:disabled {

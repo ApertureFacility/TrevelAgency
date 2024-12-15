@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Header from "../header/header";
-import "@/app/components/firstSection/firstSection.css";
+import Header from "../../../app/components/header/header";
+import "./firstSection.css";
 
 const images = [
   "/images/mount.jpg",

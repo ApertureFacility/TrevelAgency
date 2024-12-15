@@ -2,30 +2,34 @@
 
 import React, { useEffect, useState } from "react";
 import "./startPage.css";
-import FirstSection from "../firstSection/firstSection";
 import "../header/header.css";
 import TestimonialsPage from "@/app/feedback/page";
 import TripsFilter from "../ToursSection/TripsFilter";
+import TravelBlog from "../Blog/Blog";
+import Footer from "../footer/footer";
+import FirstSection from "../firstSection/firstSection";
+import ContactForm from "../Contacts/Contacts";
+
 
 const MainPage: React.FC = () => {
   return (
     <div className="homepage">
     <FirstSection/> 
       <section className="homepage__tours">
-<TripsFilter/>
+      <TripsFilter/>
       </section>
-
       <section className="homepage__guides">
-       <TestimonialsPage/>
+      <TestimonialsPage/>
       </section>
       <section className="homepage__promotions">
+      <TravelBlog/>
       </section>
-
       <section className="homepage__contacts">
-        <h2 className="homepage__section-title">Контакты</h2>
-        <p className="homepage__section-text">Как нас найти...</p>
+     <ContactForm/>
       </section>
+      <Footer/>
     </div>
+
   );
 };
 
