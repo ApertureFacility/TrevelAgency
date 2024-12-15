@@ -46,13 +46,14 @@ const TripsFilter = () => {
       if (!response.ok) {
         throw new Error('Ошибка при загрузке данных');
       }
-
+      const url = `/search?${queryParams.toString()}`;
       const data: Trip[] = await response.json();
       setTrips(data);
     } catch (err: any) {
       setError(err.message || 'Произошла ошибка');
     } finally {
       setLoading(false);
+      
     }
   };
 

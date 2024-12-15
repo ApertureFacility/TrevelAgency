@@ -30,7 +30,9 @@ html {
   box-sizing: border-box;
   overflow: hidden;
 }
-
+.homepage__guides{
+  height: 120%;
+}
 .homepage__hero {
   position: relative;
   z-index: 910;
