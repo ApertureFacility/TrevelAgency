@@ -1,0 +1,40 @@
+
+/* firstSection.css */
+.unified-search {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc; /* Границы общего элемента */
+    border-radius: 5px; /* Скругление */
+    overflow: hidden; /* Для устранения зазоров между элементами */
+    width: 100%;
+    margin: 0 auto; /* Центрирование */
+  }
+  
+  .unified-search__input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .unified-search__input[type="date"] {
+    padding-left: 15px; /* Увеличенный отступ для даты */
+  }
+  
+  .unified-search__button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .unified-search__button:hover {
+    background-color: #0056b3;
+  }
+  
+  .unified-search__button:active {
+    background-color: #003f7f;
+  }

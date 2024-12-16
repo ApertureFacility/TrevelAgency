@@ -155,3 +155,30 @@ html {
   background: #ff7f50;
   transform: scale(1.2);
 }
+.homepage__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.homepage__filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+
+.homepage__filter-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.homepage__filter-input,
+.homepage__filter-select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
