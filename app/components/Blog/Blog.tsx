@@ -13,7 +13,7 @@ const images = [
 const TravelBlog: React.FC = () => {
   return (
     <div className="travel-blog">
-      <h3 className="travel-blog__title">Прекрасные моменты с нами</h3>
+      <h3 className="travel-blog__title">Фотогалерея поездок</h3>
       <div className="travel-blog__images">
         {images.map((image, index) => (
           <div key={index} className="travel-blog__item">

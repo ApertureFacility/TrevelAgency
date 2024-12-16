@@ -44,7 +44,7 @@ const Footer = () => {
         <ul>
           <li><a href="#privacy-policy">Политика конфиденциальности</a></li>
         </ul>
-        <p>© 2024 Турклуб Активный</p>
+        <p>© 2024 Турклуб Вершина</p>
         <p>Email: example@example.com</p>
         <p>Телефон: +1234567890</p>
       </div>

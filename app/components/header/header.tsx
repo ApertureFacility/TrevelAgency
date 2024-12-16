@@ -42,8 +42,8 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li className="header__nav-item">
-              <Link href="/promotions">
-                <p>Контакты</p>
+              <Link href="/about">
+                <p>О клубе</p>
               </Link>
             </li>
             <li className="header__nav-item">

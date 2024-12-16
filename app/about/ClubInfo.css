@@ -1,0 +1,32 @@
+.club-info {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+  
+  .club-info__title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .club-info__description {
+    margin: 10px 0;
+  }
+  
+  .club-info__address,
+  .club-info__phone,
+  .club-info__email,
+  .club-info__working-hours {
+    margin: 5px 0;
+  }
+  
+  .club-info__social-links a {
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .club-info__social-links a:hover {
+    text-decoration: underline;
+  }
+  
