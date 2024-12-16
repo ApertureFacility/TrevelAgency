@@ -1,5 +1,5 @@
 import React from "react";
-import "./feedback.css";
+import "./feedbackSection.css";
 
 interface Testimonial {
   id: number;

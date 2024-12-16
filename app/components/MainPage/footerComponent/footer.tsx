@@ -1,5 +1,6 @@
 import React from 'react';
 import './footer.css';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="footer__section">
         <h4>О клубе</h4>
         <ul>
-          <li><a href="#about">О клубе</a></li>
+          <Link href="/about"><li>О клубе</li></Link>
           <li><a href="#members">Участникам</a></li>
           <li><a href="#trips">Участие в походах</a></li>
           <li><a href="#booking">Бронь и Оплата</a></li>

@@ -1,43 +1,48 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Для навигации по URL
-import "./search.css"; // Добавим стили для объединённого поиска
+import { useRouter } from "next/navigation"; 
+import "./search.css"; 
 
 const UnifiedSearch: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  // Состояние для полей формы
+
   const [filters, setFilters] = useState({
     region: "",
+    activity: "",
     dateFrom: "",
     dateTo: "",
   });
 
-  // Обновление состояния при изменении полей
+
   const handleChange = (key: string, value: string) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
-  // Обработчик клика на кнопку поиска
+
   const handleSearch = () => {
     const queryParams = new URLSearchParams();
 
-    // Добавляем параметры в URL, если они заполнены
+
     if (filters.region) queryParams.append("region", filters.region);
+    if (filters.activity) queryParams.append("activity", filters.activity);
     if (filters.dateFrom) queryParams.append("datefrom", filters.dateFrom);
     if (filters.dateTo) queryParams.append("dateto", filters.dateTo);
 
-    // Формируем целевой URL
-    const targetUrl = `/search/${filters.region || "any"}/?${queryParams.toString()}`;
 
-    // Навигация по целевому URL
-    navigate(targetUrl);
+    const region = filters.region || "api/cards?region=any";
+
+
+    const targetUrl = `api/cards?region=any`;
+
+
+    router.push(targetUrl);
   };
 
   return (
     <div className="unified-search">
-          <input
+      <input
         type="text"
         placeholder="Куда"
         className="unified-search__input"
@@ -48,8 +53,8 @@ const UnifiedSearch: React.FC = () => {
         type="text"
         placeholder="Вид активности"
         className="unified-search__input"
-        value={filters.region}
-        onChange={(e) => handleChange("region", e.target.value)}
+        value={filters.activity}
+        onChange={(e) => handleChange("activity", e.target.value)}
       />
       <input
         type="date"
@@ -57,14 +62,12 @@ const UnifiedSearch: React.FC = () => {
         value={filters.dateFrom}
         onChange={(e) => handleChange("dateFrom", e.target.value)}
       />
-
       <input
         type="date"
         className="unified-search__input"
         value={filters.dateTo}
         onChange={(e) => handleChange("dateTo", e.target.value)}
       />
-
       <button className="unified-search__button" onClick={handleSearch}>
         Искать
       </button>
@@ -73,4 +76,3 @@ const UnifiedSearch: React.FC = () => {
 };
 
 export default UnifiedSearch;
-

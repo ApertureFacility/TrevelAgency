@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import './Contacts.css';
+import './ContactsSection.css';
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState('');

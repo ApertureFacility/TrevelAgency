@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import "./employee.css";
-import Header from "../components/header/header";
+import Header from "../components/MainPage/headerComponent/header";
 
 interface Employee {
   id: number;

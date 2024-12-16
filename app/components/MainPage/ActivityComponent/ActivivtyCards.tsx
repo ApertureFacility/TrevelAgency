@@ -1,4 +1,3 @@
-// components/ActivityCards.tsx
 import React from "react";
 import './Activity.css'
 

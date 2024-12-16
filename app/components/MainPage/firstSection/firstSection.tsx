@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Header from "../../../app/components/header/header";
+import Header from "../headerComponent/header";
 import "./firstSection.css";
-import UnifiedSearch from "../Search/search";
+import UnifiedSearch from "../../search/search";
 
 const images = [
   "/images/mount.jpg",

@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 .homepage__guides,
-.homepage__promotions {
+.homepage__promotions,.homepage__tours {
   scroll-snap-align: start;
   height: max-content;
   width: 100%;
@@ -17,7 +17,7 @@ html {
   box-sizing: border-box;
   overflow: hidden;
 }
-.homepage__hero,.homepage__contacts,.homepage__tours{
+.homepage__hero,.homepage__contacts{
   height: 100vh;
   scroll-snap-align: start;
   width: 100%;

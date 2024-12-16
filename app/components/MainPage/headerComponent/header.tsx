@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logoimg from '@/app/components/header/mount-svgrepo-com.svg';
-import '@/app/components/header/header.css';
+import logoimg from './travel-svgrepo-com.svg';
+import './header.css';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

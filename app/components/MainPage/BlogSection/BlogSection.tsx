@@ -1,5 +1,5 @@
 import React from 'react';
-import './TravelBlog.css';
+import './BlogSection.css';
 
 const images = [
   { src: "/images/forest1.jpeg", alt: 'An example image' },
