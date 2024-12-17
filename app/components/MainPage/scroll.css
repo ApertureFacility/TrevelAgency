@@ -1,0 +1,30 @@
+.scrollable-list {
+    max-height: 400px; /* Максимальная высота для скроллирования */
+    overflow-y: auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+  }
+  
+  .scrollable-list__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .scrollable-list__name {
+    font-size: 14px;
+  }
+  
+  .scrollable-list__count {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .mapWrapper{
+    display: flex;
+   
+    max-width: 100vw;
+  }
+  .scrollable-list__flag { width: 24px; /* Размер кружочка с флагом */ height: 24px; border-radius: 50%; margin-right: 8px; }

@@ -17,6 +17,7 @@ const MainPage: React.FC = () => {
     <div className="homepage">
     <FirstSection/> 
       <section className="homepage__tours">
+      
       <MapComponent />
       </section>
       <ActivityCards/>

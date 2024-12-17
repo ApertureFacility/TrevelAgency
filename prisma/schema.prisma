@@ -1,0 +1,20 @@
+// Указываем генерацию клиента и подключение к SQLite
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db" // Файл базы данных
+}
+
+// Модель для хранения туров
+model Tour {
+  id          Int      @id @default(autoincrement()) // Уникальный ID
+  title       String
+  description String
+  price       Float
+  location    String
+  images      String   // Строка с URL изображений (можно через запятую)
+  createdAt   DateTime @default(now())              // Дата создания
+}

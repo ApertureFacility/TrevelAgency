@@ -11,6 +11,7 @@ import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Style, Icon } from 'ol/style';
 import Overlay from 'ol/Overlay';
+import ScrollableList from './MapLeftScrollComp';
 
 const MapComponent: React.FC = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
@@ -96,7 +97,7 @@ const MapComponent: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mapRef} style={{ width: '100%', height: '400px', border: '1px solid #ccc' }} />;
+  return <div className='mapWrapper'><ScrollableList/><div ref={mapRef} style={{ width: '100%', height: '400px', border: '1px solid #ccc' }} /></div>;
 };
 
 export default MapComponent;

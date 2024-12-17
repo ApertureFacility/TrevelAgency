@@ -58,7 +58,7 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <button className='header__login-button'>Войти</button>
+        <Link href="sign"><button className='header__login-button'>Войти</button></Link>
       </div>
     </header>
   );

@@ -36,9 +36,7 @@ const FirstSection: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleFilterChange = (key: string, value: any) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
-  };
+
 
   const handleSearch = async () => {
     setLoading(true);
