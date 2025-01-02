@@ -11,14 +11,11 @@ import TestimonialsPage from "@/app/components/MainPage/feedbackSection/feedback
 import ActivityCards from "./ActivityComponent/ActivivtyCards";
 import dynamic from 'next/dynamic';
 
-const MapComponent = dynamic(() => import('./map'), { ssr: false });
 const MainPage: React.FC = () => {
   return (
     <div className="homepage">
     <FirstSection/> 
       <section className="homepage__tours">
-      
-      <MapComponent />
       </section>
       <ActivityCards/>
       <section className="homepage__promotions">

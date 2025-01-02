@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Header from "../headerComponent/header";
 import "./firstSection.css";
-import UnifiedSearch from "../../search/search";
+import UnifiedSearch from "../../Search/search";
 
 const images = [
   "/images/mount.jpg",

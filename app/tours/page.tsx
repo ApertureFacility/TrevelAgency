@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
+import "./Tours.css"; // Подключаем обычный CSS файл
 
 // Интерфейс для данных тура
 interface Tour {
@@ -25,6 +26,7 @@ const Tours = () => {
         if (!response.ok) throw new Error("Ошибка загрузки данных");
 
         const data: Tour[] = await response.json(); // Преобразуем ответ в JSON
+        console.log(data)
         setTours(data); // Сохраняем данные в состоянии
       } catch (err) {
         setError("Не удалось загрузить данные туров");
@@ -39,26 +41,28 @@ const Tours = () => {
 
   // Отображаем разные состояния
   if (loading) return <p>Загрузка данных...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (error) return <p className="tours__error">{error}</p>;
 
   return (
-    <div>
-      <h1>Туры</h1>
-      <ul>
+    <div className="tours">
+      <h1 className="tours__heading">Туры</h1>
+      <div className="tours__card-container">
         {tours.map((tour) => (
-          <li key={tour.id} style={{ marginBottom: "20px" }}>
-            <h2>{tour.title}</h2>
-            <p>{tour.description}</p>
-            <p>Цена: ${tour.price}</p>
-            <p>Место: {tour.location}</p>
+          <div key={tour.id} className="tours__card">
             <img
               src={tour.images}
               alt={tour.title}
-              style={{ width: "300px", borderRadius: "8px" }}
+              className="tours__image"
             />
-          </li>
+            <div className="tours__card-content">
+              <h2 className="tours__card-title">{tour.title}</h2>
+              <p className="tours__description">{tour.description}</p>
+              <p className="tours__price">Цена: ${tour.price}</p>
+              <p className="tours__location">Место: {tour.location}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

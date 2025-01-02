@@ -1,0 +1,20 @@
+.tours {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .tour-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .tour-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  

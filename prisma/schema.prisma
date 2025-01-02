@@ -1,20 +1,48 @@
-// Указываем генерацию клиента и подключение к SQLite
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db" // Файл базы данных
+  url      = "file:./dev.db"
 }
 
-// Модель для хранения туров
+// Модель для туров
 model Tour {
-  id          Int      @id @default(autoincrement()) // Уникальный ID
+  id          Int       @id @default(autoincrement())
   title       String
   description String
   price       Float
   location    String
-  images      String   // Строка с URL изображений (можно через запятую)
-  createdAt   DateTime @default(now())              // Дата создания
+  createdAt   DateTime  @default(now())
+  activityId  Int
+  activity    Activity @relation(fields: [activityId], references: [id])
+  images      Image[]
+  reviews     Review[]
+}
+
+
+// Модель для активностей
+model Activity {
+  id   Int    @id @default(autoincrement())
+  name String @unique // Название активности, например, "Восхождения"
+  tours Tour[]
+}
+
+// Модель для хранения изображений тура
+model Image {
+  id     Int    @id @default(autoincrement())
+  url    String // URL изображения
+  tourId Int    // Связь с туром
+  tour   Tour   @relation(fields: [tourId], references: [id])
+}
+
+// Модель для отзывов
+model Review {
+  id      Int      @id @default(autoincrement())
+  rating  Int      // Оценка (например, от 1 до 5)
+  comment String   // Текст отзыва
+  tourId  Int      // Связь с туром
+  tour    Tour     @relation(fields: [tourId], references: [id])
+  createdAt DateTime @default(now())
 }
