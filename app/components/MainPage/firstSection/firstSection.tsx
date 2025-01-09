@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Header from "../headerComponent/header";
+import UnifiedSearch from "../../Search/search";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Header from "../headerComponent/header";
 import "./firstSection.css";
-import UnifiedSearch from "../../Search/search";
+
 
 const images = [
   "/images/mount.jpg",

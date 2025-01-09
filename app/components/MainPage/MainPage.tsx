@@ -9,7 +9,7 @@ import FirstSection from "./firstSection/firstSection";
 import ContactForm from "./ContactsSection/ContactsSection";
 import TestimonialsPage from "@/app/components/MainPage/feedbackSection/feedbackSection";
 import ActivityCards from "./ActivityComponent/ActivivtyCards";
-import dynamic from 'next/dynamic';
+
 
 const MainPage: React.FC = () => {
   return (

@@ -1,4 +1,3 @@
-/* Общие настройки */
 * {
   margin: 0;
   padding: 0;
@@ -45,10 +44,10 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Отправляем Swiper на задний план */
+  z-index: -1; 
 }
 
-/* Текст и кнопки */
+
 .homepage__hero-title {
   width: 40%;
   font-size: 3rem;
@@ -62,12 +61,12 @@ html {
   color: #d4f1f9;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   margin: 3rem 0;
+  text-align: left;
+  margin-top: 2rem;
 }
 
-.homepage__hero_text {
+.homepage__hero-content{
   margin-top: 8%;
-  margin-left: 9%;
-  text-align: left;
 }
 
 .homepage__search {

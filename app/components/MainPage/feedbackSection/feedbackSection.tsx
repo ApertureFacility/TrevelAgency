@@ -5,8 +5,8 @@ interface Testimonial {
   id: number;
   name: string;
   avatar: string;
-  tour: string; // Новый атрибут для названия тура
-  date: string; // Новый атрибут для даты тура
+  tour: string; 
+  date: string; 
   text: string;
 }
 
