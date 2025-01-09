@@ -1,0 +1,77 @@
+/* Корневой блок */
+.employee-list {
+    padding: 75px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .employee-list__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .employee-list__items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .employee-list__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .employee-list__avatar-container {
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  
+  .employee-list__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  .employee-list__info {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .employee-list__name {
+    font-weight: bold;
+  }
+  
+  .employee-list__role {
+    font-style: italic;
+  }
+  
+  .employee-list__hikes {
+    font-size: 14px;
+    color: #555;
+  }
+  /* Поле для поиска */
+.employee-list__search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Сообщение о пустом результате */
+.employee-list__no-results {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  margin-top: 10px;
+}

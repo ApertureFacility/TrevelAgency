@@ -1,0 +1,36 @@
+.travel-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.travel-blog__title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.travel-blog__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.travel-blog__item {
+  flex: 1 1 calc(33.333% - 32px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.travel-blog__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.homepage__promotions{
+  height: max-content;
+}
