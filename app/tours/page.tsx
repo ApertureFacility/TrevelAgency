@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "./Tours.css"; // Подключаем обычный CSS файл
+import "./Tours.css"; 
 
-// Интерфейс для данных тура
+
 interface Tour {
   id: number;
   title: string;
@@ -14,32 +14,32 @@ interface Tour {
 }
 
 const Tours = () => {
-  const [tours, setTours] = useState<Tour[]>([]); // Состояние для хранения данных туров
+  const [tours, setTours] = useState<Tour[]>([]); 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Запрос данных с сервера при монтировании компонента
+
   useEffect(() => {
     const fetchTours = async () => {
       try {
         const response = await fetch("/api/tours");
         if (!response.ok) throw new Error("Ошибка загрузки данных");
 
-        const data: Tour[] = await response.json(); // Преобразуем ответ в JSON
+        const data: Tour[] = await response.json(); 
         console.log(data)
-        setTours(data); // Сохраняем данные в состоянии
+        setTours(data);
       } catch (err) {
         setError("Не удалось загрузить данные туров");
         console.error(err);
       } finally {
-        setLoading(false); // Снимаем индикатор загрузки
+        setLoading(false);
       }
     };
 
     fetchTours();
   }, []);
 
-  // Отображаем разные состояния
+
   if (loading) return <p>Загрузка данных...</p>;
   if (error) return <p className="tours__error">{error}</p>;
 

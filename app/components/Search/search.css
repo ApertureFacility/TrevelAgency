@@ -18,7 +18,7 @@
   }
   
   .unified-search__input[type="date"] {
-    padding-left: 15px; /* Увеличенный отступ для даты */
+    padding-left: 15px;
   }
 
   .unified-search__button:hover {

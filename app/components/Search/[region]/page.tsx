@@ -1,6 +1,6 @@
-// app/components/search/[region]/page.tsx
+
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation"; // Получаем параметры поиска
+import { useSearchParams } from "next/navigation"; 
 
 interface CardData {
   id: number;
@@ -10,41 +10,39 @@ interface CardData {
 }
 
 const SearchResultsPage = ({ params }: { params: { region: string } }) => {
-  const searchParams = useSearchParams(); // Получаем параметры поиска
+  const searchParams = useSearchParams(); 
   const [cards, setCards] = useState<CardData[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchCards = async () => {
     setLoading(true);
 
-    // Получаем параметры из URL
+
     const region = params.region;
     const dateFrom = searchParams?.get("datefrom");
     const dateTo = searchParams?.get("dateto");
     const activity = searchParams?.get("activity");
 
     try {
-      // Формируем URL для API с учётом наличия фильтров
-      let apiUrl = `/api/cards?`; // URL вашего API
+      let apiUrl = `/api/cards?`; 
       if (region !== "any") apiUrl += `region=${region}&`;
       if (dateFrom) apiUrl += `dateFrom=${dateFrom}&`;
       if (dateTo) apiUrl += `dateTo=${dateTo}&`;
       if (activity) apiUrl += `activity=${activity}&`;
 
-      // Запрашиваем данные
+
       const response = await fetch(apiUrl);
       const data = await response.json();
 
-      setCards(data); // Обновляем состояние карточек
+      setCards(data); 
     } catch (error) {
       console.error("Ошибка при загрузке данных:", error);
-      setCards([]); // Если ошибка, очищаем карточки
+      setCards([]); 
     } finally {
       setLoading(false);
     }
   };
 
-  // Загружаем карточки при загрузке страницы или изменении фильтров
   useEffect(() => {
     fetchCards();
   }, [params.region, searchParams]);

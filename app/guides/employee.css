@@ -1,4 +1,4 @@
-/* Корневой блок */
+
 .employee-list {
     padding: 75px 20px 20px 20px;
     font-family: Arial, sans-serif;
@@ -57,7 +57,7 @@
     font-size: 14px;
     color: #555;
   }
-  /* Поле для поиска */
+
 .employee-list__search {
   width: 100%;
   padding: 10px;
@@ -68,7 +68,7 @@
   box-sizing: border-box;
 }
 
-/* Сообщение о пустом результате */
+
 .employee-list__no-results {
   text-align: center;
   color: #999;

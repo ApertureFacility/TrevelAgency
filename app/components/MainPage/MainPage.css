@@ -5,8 +5,7 @@
 }
 
 .homepage {
-  overflow-y: scroll;
-  overflow-x: hidden; 
+ overflow: visible;
   height: max-content;
   width: 100vw;
 }

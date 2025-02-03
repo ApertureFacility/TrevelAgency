@@ -6,12 +6,12 @@ import "./search.css";
 
 const UnifiedSearch: React.FC = () => {
   const router = useRouter();
-  const regionDropdownRef = useRef<HTMLDivElement | null>(null); // Ссылка на dropdown регионов
-  const activityDropdownRef = useRef<HTMLDivElement | null>(null); // Ссылка на dropdown активностей
+  const regionDropdownRef = useRef<HTMLDivElement | null>(null); 
+  const activityDropdownRef = useRef<HTMLDivElement | null>(null); 
 
   const [filters, setFilters] = useState({
-    region: [] as string[], // список выбранных регионов
-    activity: [] as string[], // список выбранных активностей
+    region: [] as string[], 
+    activity: [] as string[], 
     dateFrom: "",
     dateTo: "",
   });
@@ -40,7 +40,7 @@ const UnifiedSearch: React.FC = () => {
     "Шри-Ланка", "Эквадор", "Япония",
   ];
 
-  // Закрытие dropdown при клике вне его
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -95,13 +95,12 @@ const UnifiedSearch: React.FC = () => {
 
   return (
     <div className="unified-search">
-      {/* Поле для региона */}
       <div className="unified-search__input" onClick={() => setIsRegionDropdownOpen(!isRegionDropdownOpen)}>
         <input
           type="text"
           placeholder="Куда"
           className="unified-search__input"
-          value={filters.region.join(", ")} // показываем выбранные регионы
+          value={filters.region.join(", ")} 
           readOnly
         />
         {isRegionDropdownOpen && (
@@ -120,13 +119,12 @@ const UnifiedSearch: React.FC = () => {
         )}
       </div>
 
-      {/* Поле для активности */}
       <div className="unified-search__input" onClick={() => setIsActivityDropdownOpen(!isActivityDropdownOpen)}>
         <input
           type="text"
           placeholder="Вид активности"
           className="unified-search__input"
-          value={filters.activity.join(", ")} // показываем выбранные активности
+          value={filters.activity.join(", ")}
           readOnly
         />
         {isActivityDropdownOpen && (
@@ -145,7 +143,6 @@ const UnifiedSearch: React.FC = () => {
         )}
       </div>
 
-      {/* Поле для дат */}
       <input
         type="date"
         className="unified-search__input"

@@ -12,19 +12,19 @@ interface Employee {
   avatarUrl: string;
 }
 
-// Фейковые данные сотрудников
+
 const fakeEmployees: Employee[] = Array.from({ length: 30 }, (_, index) => ({
   id: index + 1,
   name: `Employee ${index + 1}`,
   role: index % 3 === 0 ? "Developer" : index % 3 === 1 ? "Designer" : "Manager",
-  plannedHikes: Math.floor(Math.random() * 10) + 1, // От 1 до 10 походов
+  plannedHikes: Math.floor(Math.random() * 10) + 1, 
   avatarUrl: `https://cs13.pikabu.ru/avatars/1873/x1873132-1972677953.png`,
 }));
 
 const EmployeeList: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // Состояние для хранения поискового запроса
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Фильтрация сотрудников по имени
+
   const filteredEmployees = fakeEmployees.filter((employee) =>
     employee.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -34,7 +34,6 @@ const EmployeeList: React.FC = () => {
     <div className="employee-list">
       <Header/>
       <h1 className="employee-list__title">Список сотрудников компании</h1>
-      {/* Поле для поиска */}
       <input
         type="text"
         placeholder="Найти сотрудника..."
