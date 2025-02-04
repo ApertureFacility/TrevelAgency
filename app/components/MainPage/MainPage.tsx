@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import React from "react";
+
 import "./MainPage.css";
 import "./headerComponent/header.css";
 import TravelBlog from "./BlogSection/BlogSection";
