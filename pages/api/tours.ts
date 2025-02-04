@@ -12,10 +12,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { category } = req.query; 
 
-    const filters: any = {}; 
+    const filters: { activity?: { name: string } } = {};
 
-    if (category) {
-      filters.activity = { name: String(category) };
+    if (typeof category === "string") {
+      filters.activity = { name: category };
     }
 
     const tours = await prisma.tour.findMany({

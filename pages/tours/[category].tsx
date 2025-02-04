@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import "./categories.css"; // Подключаем CSS
+import "./categories.css"; 
+
 
 interface Tour {
   id: number;

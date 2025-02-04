@@ -1,5 +1,7 @@
 import React from "react";
 import './scroll.css'
+import Image from "next/image";
+
 
 const locations = [
   { name: "Россия", count: 570, flagUrl: "/images/bel.png" },
@@ -23,7 +25,7 @@ const ScrollableList: React.FC = () => {
     <div className="scrollable-list">
       {locations.map((location, index) => (
         <div className="scrollable-list__item" key={index}>
-          <img src={location.flagUrl} alt={`${location.name} flag`} className="scrollable-list__flag" />
+          <Image src={location.flagUrl} alt={`${location.name} flag`} className="scrollable-list__flag" width={300} height={300}/>
           <span className="scrollable-list__name">{location.name}</span>
           <span className="scrollable-list__count">{location.count}</span>
         </div>

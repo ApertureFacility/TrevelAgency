@@ -49,7 +49,7 @@ const TravelTours: React.FC = () => {
 
   return (
     <div>
-      <h1>Туры по категории "Путешествия"</h1>
+   <h1>Туры по категории &quot;Путешествия&quot;</h1>
       <div className="tours">
         {tours.map((tour) => (
           <div key={tour.id} className="tour-card">

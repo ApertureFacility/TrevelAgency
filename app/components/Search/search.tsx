@@ -6,15 +6,22 @@ import "./search.css";
 
 const UnifiedSearch: React.FC = () => {
   const router = useRouter();
-  const regionDropdownRef = useRef<HTMLDivElement | null>(null); 
-  const activityDropdownRef = useRef<HTMLDivElement | null>(null); 
+  const regionDropdownRef = useRef<HTMLDivElement>(null);
+  const activityDropdownRef = useRef<HTMLDivElement>(null);
+  
 
-  const [filters, setFilters] = useState({
-    region: [] as string[], 
-    activity: [] as string[], 
+  const [filters, setFilters] = useState<{
+    region: string[];
+    activity: string[];
+    dateFrom: string;
+    dateTo: string;
+  }>({
+    region: [],
+    activity: [],
     dateFrom: "",
     dateTo: "",
   });
+  
 
   const [isRegionDropdownOpen, setIsRegionDropdownOpen] = useState(false);
   const [isActivityDropdownOpen, setIsActivityDropdownOpen] = useState(false);
@@ -43,19 +50,14 @@ const UnifiedSearch: React.FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        regionDropdownRef.current &&
-        !regionDropdownRef.current.contains(event.target as Node)
-      ) {
+      if (regionDropdownRef.current && !regionDropdownRef.current.contains(event.target as Node)) {
         setIsRegionDropdownOpen(false);
       }
-      if (
-        activityDropdownRef.current &&
-        !activityDropdownRef.current.contains(event.target as Node)
-      ) {
+      if (activityDropdownRef.current && !activityDropdownRef.current.contains(event.target as Node)) {
         setIsActivityDropdownOpen(false);
       }
     };
+    
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -83,15 +85,16 @@ const UnifiedSearch: React.FC = () => {
 
   const handleSearch = () => {
     const queryParams = new URLSearchParams();
-
+  
     if (filters.region.length > 0) queryParams.append("region", filters.region.join(","));
     if (filters.activity.length > 0) queryParams.append("activity", filters.activity.join(","));
-    if (filters.dateFrom) queryParams.append("datefrom", filters.dateFrom);
-    if (filters.dateTo) queryParams.append("dateto", filters.dateTo);
-
+    if (filters.dateFrom) queryParams.append("datefrom", String(filters.dateFrom));
+    if (filters.dateTo) queryParams.append("dateto", String(filters.dateTo));
+  
     const targetUrl = `/api/cards?${queryParams.toString()}`;
     router.push(targetUrl);
   };
+  
 
   return (
     <div className="unified-search">

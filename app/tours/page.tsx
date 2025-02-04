@@ -51,7 +51,7 @@ const Tours = () => {
         {tours.map((tour) => (
           <div key={tour.id} className="tours__card">
            {Array.isArray(tour.images) && tour.images.length > 0 && (
-  <img src={tour.images[0].url} alt={tour.title} className="tours__image" />
+  <img src={tour.images[0].url} alt={tour.title} className="tours__image"  />
 )}
             <div className="tours__card-content">
               <h2 className="tours__card-title">{tour.title}</h2>

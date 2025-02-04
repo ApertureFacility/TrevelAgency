@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import "./Activity.css";
 
+
 interface Activity {
   id: number;
   title: string;
@@ -32,13 +33,20 @@ const ActivityCards: React.FC = () => {
 
         const data = await response.json();
 
-        const formattedActivities: Activity[] = data.map((activity: any) => ({
+        interface ApiActivity {
+          id: number;
+          name: string;
+          count?: number;
+        }
+        
+        const formattedActivities: Activity[] = data.map((activity: ApiActivity) => ({
           id: activity.id,
           title: activity.name,
-          count: activity._count?.tours ?? 0,
+          count: activity.count ?? 0,
           imageUrl: defaultActivities.find((a) => a.id === activity.id)?.imageUrl || "/images/default.jpg",
           link: defaultActivities.find((a) => a.id === activity.id)?.link || "/tours",
         }));
+        
 
         setActivities(formattedActivities);
       } catch (err) {

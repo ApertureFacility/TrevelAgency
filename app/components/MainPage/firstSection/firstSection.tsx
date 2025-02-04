@@ -8,23 +8,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./firstSection.css";
 
-
 const images = [
   "/images/mount.jpg",
   "/images/mount2.jpg",
   "/images/mount3.jpg",
 ];
 
-interface Trip {
-  id: number;
-  region: string;
-  type: string;
-  date: string;
-  budget: number;
-}
-
 const FirstSection: React.FC = () => {
-  const [filters, setFilters] = useState({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [filters] = useState({
     region: "",
     type: "",
     startDate: "",
@@ -32,41 +24,6 @@ const FirstSection: React.FC = () => {
     budgetMin: "",
     budgetMax: "",
   });
-
-  const [trips, setTrips] = useState<Trip[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-
-
-  const handleSearch = async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const queryParams = new URLSearchParams();
-
-      if (filters.region) queryParams.append("region", filters.region);
-      if (filters.type) queryParams.append("type", filters.type);
-      if (filters.startDate) queryParams.append("startDate", filters.startDate);
-      if (filters.endDate) queryParams.append("endDate", filters.endDate);
-      if (filters.budgetMin) queryParams.append("budgetMin", filters.budgetMin);
-      if (filters.budgetMax) queryParams.append("budgetMax", filters.budgetMax);
-
-      const response = await fetch(`/api/trips?${queryParams.toString()}`);
-
-      if (!response.ok) {
-        throw new Error("Ошибка при загрузке данных");
-      }
-
-      const data: Trip[] = await response.json();
-      setTrips(data);
-    } catch (err: any) {
-      setError(err.message || "Произошла ошибка");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <section className="homepage__hero">
@@ -76,7 +33,7 @@ const FirstSection: React.FC = () => {
           <h1 className="homepage__hero-title">
             Добро пожаловать в Турклуб Восхождение!
           </h1>
-         <UnifiedSearch/>
+          <UnifiedSearch />
           <p className="homepage__hero-text">
             Ваши незабываемые путешествия начинаются здесь.
           </p>
@@ -107,8 +64,6 @@ const FirstSection: React.FC = () => {
           ></SwiperSlide>
         ))}
       </Swiper>
-
-  
     </section>
   );
 };

@@ -12,12 +12,6 @@ import TestimonialsPage from "@/app/components/MainPage/feedbackSection/feedback
 import ActivityCards from "./ActivityComponent/ActivivtyCards";
 
 const MainPage: React.FC = () => {
-  const pathname = usePathname(); // Получаем текущий путь
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Прокрутка страницы вверх при изменении пути
-  }, [pathname]); // useEffect срабатывает при изменении пути
-
   return (
     <div className="homepage">
       <FirstSection />

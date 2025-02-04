@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./employee.css";
 import Header from "../components/MainPage/headerComponent/header";
 
+
 interface Employee {
   id: number;
   name: string;
@@ -49,8 +50,7 @@ const EmployeeList: React.FC = () => {
                 <img
                   src={employee.avatarUrl}
                   alt={employee.name}
-                  className="employee-list__avatar"
-                />
+                  className="employee-list__avatar"/>
               </div>
               <div className="employee-list__info">
                 <span className="employee-list__name">{employee.name}</span> —{" "}

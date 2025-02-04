@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"npx prisma studio\"",
+    "dev": "concurrently \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
