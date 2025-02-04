@@ -10,8 +10,9 @@ interface Tour {
   description: string;
   price: number;
   location: string;
-  images: string;
+  images: { url: string }[];  
 }
+
 
 const Tours = () => {
   const [tours, setTours] = useState<Tour[]>([]); 
@@ -49,11 +50,9 @@ const Tours = () => {
       <div className="tours__card-container">
         {tours.map((tour) => (
           <div key={tour.id} className="tours__card">
-            <img
-              src={tour.images}
-              alt={tour.title}
-              className="tours__image"
-            />
+           {Array.isArray(tour.images) && tour.images.length > 0 && (
+  <img src={tour.images[0].url} alt={tour.title} className="tours__image" />
+)}
             <div className="tours__card-content">
               <h2 className="tours__card-title">{tour.title}</h2>
               <p className="tours__description">{tour.description}</p>

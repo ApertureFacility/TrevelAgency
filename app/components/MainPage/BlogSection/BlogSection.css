@@ -34,3 +34,19 @@
 .homepage__promotions{
   height: max-content;
 }
+.travel-blog__item {
+  position: relative;
+  flex: 1 1 calc(33.333% - 32px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.travel-blog__icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}

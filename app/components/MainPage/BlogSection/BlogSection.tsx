@@ -1,5 +1,7 @@
 import React from 'react';
 import './BlogSection.css';
+import Image from 'next/image';
+const backpackIcon = "/images/backpack.png"; 
 
 const images = [
   { src: "/images/forest1.jpeg", alt: 'An example image' },
@@ -18,6 +20,7 @@ const TravelBlog: React.FC = () => {
         {images.map((image, index) => (
           <div key={index} className="travel-blog__item">
             <img src={image.src} alt={image.alt} className="travel-blog__image" />
+            <Image src={backpackIcon} alt="Backpack Icon" className="travel-blog__icon" width={40} height={40} />
           </div>
         ))}
       </div>

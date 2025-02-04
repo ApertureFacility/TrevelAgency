@@ -20,12 +20,12 @@ const UnifiedSearch: React.FC = () => {
   const [isActivityDropdownOpen, setIsActivityDropdownOpen] = useState(false);
 
   const activities = [
-    "Пеший туризм",
-    "Велоспорт",
-    "Каякинг",
-    "Скалодром",
-    "Рыбалка",
-    "Кемпинг",
+    "Путешествия",
+    "Сплавы",
+    "Фридайвинг",
+    "Восхождения",
+    "С детьми",
+    "Всё остальное",
   ];
 
   const regions = [

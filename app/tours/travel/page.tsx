@@ -1,5 +1,5 @@
 "use client"
-import "./Travel.css"; // Подключаем обычный CSS файл
+import "./Travel.css"; 
 import React, { useEffect, useState } from 'react';
 
 interface Image {

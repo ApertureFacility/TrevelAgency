@@ -1,26 +1,33 @@
-"use server"
-
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 
-// Создаём экземпляр Prisma Client
 const prisma = new PrismaClient();
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== "GET") {
+    res.setHeader("Allow", ["GET"]);
+    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
   try {
-    // Получаем все туры из базы данных
-    const tours = await prisma.tour.findMany();
+    const { category } = req.query; 
+
+    const filters: any = {}; 
+
+    if (category) {
+      filters.activity = { name: String(category) };
+    }
+
+    const tours = await prisma.tour.findMany({
+      where: filters,
+      include: {
+        images: true,
+      },
+    });
+
     res.status(200).json(tours);
   } catch (error) {
     console.error("Ошибка при получении данных:", error);
-
-    // Отправляем корректный ответ с типом ошибки
-    res.status(500).json({ error: "Не удалось получить данные туров" });
-  } finally {
-    // Закрываем соединение с Prisma Client
-    await prisma.$disconnect();
+    res.status(500).json({ error: "Не удалось загрузить туры" });
   }
 }
